@@ -29,6 +29,18 @@ npm install multer-s3@2.10.0 --save;
 
 - READEME 줄바꿈: `git config --global core.autocrlf true`  
 
+- error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/repo~':  
+새로운 깃 리파지토리를 init하고, 다시 push 하는 방법이다.
+
+`git init`
+`git add .`
+`git commit -m "message"`
+`git config user.name "Username"`
+`git config user.email "Email address"`
+`git remote add origin "github.com/your-repo.git"`
+`git push -u origin master`
+
 ## 초기 설정
 - 디렉토리 생성   
     > mkdir client      
