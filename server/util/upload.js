@@ -27,7 +27,7 @@ function setUpload(bucket) {
                 cb(null, Date.now().toString() + extenstion);
             }
         })
-    }).array("image", 10) // 예를 들어, 최대 10개의 파일을 업로드하도록 설정
+    }).array("image", 10) // upload.js랑 이름 똑같이 image해야 함. 예를 들어, 최대 10개의 파일을 업로드하도록 설정
     return upload
 }
 
