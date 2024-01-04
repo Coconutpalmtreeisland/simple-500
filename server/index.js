@@ -3,7 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 5050;
+const port = 1234;
 const config = require("./config/key.js");
 
 app.use(express.static(path.join(__dirname, "../client/build")));

@@ -5,7 +5,10 @@ const postSchema = new mongoose.Schema(
         title: String,
         content: String,
         postNum: Number,
-        image: String,
+        image: {
+            type: Array,
+            default: []
+        },
         // User.js 값 가져오기
         author: {
             type: mongoose.Schema.Types.ObjectId,

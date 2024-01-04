@@ -5,7 +5,10 @@ const PostImage = (props) => {
 
     const FileUpload = (e) => {
         const formData = new FormData();
-        formData.append("file", (e.target.files[0]));
+        let files = document.querySelector('input[type="file"]').files;
+        for (let i = 0; i < files.length; i++) {
+            formData.append('image', files[i]);
+        }
 
         axios
             .post("/api/post/image/upload", formData)
@@ -20,6 +23,7 @@ const PostImage = (props) => {
             <input
                 type="file"
                 accept='image/*'
+                multiple
                 onChange={(e) => FileUpload(e)}
             />
         </div>

@@ -106,8 +106,8 @@ router.post("/delete", (req, res) => {
 
 // 이미지 업로드
 router.post("/image/upload", setUpload("react.test.bucket"), (req, res, next) => {
-    // console.log(res.req);
-    res.status(200).json({ success: true, filePath: res.req.file.location })
+    let filePathArray = req.files.map(file => file.location);  // req.files를 사용하고, 업로드된 파일들의 url을 배열로 저장
+    res.status(200).json({ success: true, filePath: filePathArray })  // filePath를 배열로 반환
 })
 
 

@@ -26,6 +26,7 @@ const PostDetail = (props) => {
                 })
         }
     }
+    console.log(props);
 
     return (
         <div className='detail__wrap'>
@@ -34,7 +35,10 @@ const PostDetail = (props) => {
                 <span className='auth'>{props.postInfo.author.displayName}</span>
             </div>
             <div className='detail__content'>
-                {props.postInfo.image ? <img src={props.postInfo.image} alt={props.postInfo.title} /> : null}
+                {props.postInfo.image ?
+                    props.postInfo.image.map((img, index) =>
+                        <img key={index} src={img} alt={`img-${index}`} />)
+                    : null}
                 {props.postInfo.content}
             </div>
             <div className='detail__btn'>
